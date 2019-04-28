@@ -5,11 +5,15 @@ int new_cd(char **args);
 int new_help(char **args);
 int new_exit(char **args);
 
+/*array for comparing whether input is for builtin function or not*/
+
 char *builtin_str[] = {
     "cd",
     "help",
     "exit"
 };
+
+/*function pointer array for builtin functions*/
 
 int (*builtin_func[]) (char **) = {
     &new_cd,
@@ -20,6 +24,8 @@ int (*builtin_func[]) (char **) = {
 int num_builtins() {
     return sizeof(builtin_str) / sizeof(char *);
 }
+
+/*builtin functions*/
 
 int new_cd(char **args) {
     if (args[1] == NULL) {
