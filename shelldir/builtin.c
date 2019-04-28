@@ -51,5 +51,8 @@ int new_help(char **args) {
 }
 
 int new_exit(char **args) {
+
+    printf("program closed\n");
+
     return 0;
 }
